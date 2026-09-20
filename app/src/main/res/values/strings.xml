@@ -105,4 +105,26 @@
 
     <!-- Switch fund sheet -->
     <string name="switch_fund_title">Switch Fund</string>
+
+    <!-- Backup & restore -->
+    <string name="backup_title">Backup &amp; Restore Data</string>
+    <string name="backup_subtitle">Save a copy of your data, or restore from a backup file</string>
+    <string name="backup_screen_title">Backup &amp; Restore</string>
+    <string name="backup_export_title">Export Data (Backup)</string>
+    <string name="backup_export_desc">Save a full copy of your financial records to a file. Keep it somewhere safe (Google Drive, email, computer) in case this device is lost, damaged, or reset.</string>
+    <string name="btn_export_save">Save Backup File</string>
+    <string name="btn_export_share">Share Backup File</string>
+    <string name="backup_import_title">Restore Data</string>
+    <string name="backup_import_desc">Restore your records from a previously exported backup file. This will REPLACE all data currently on this device.</string>
+    <string name="btn_import_pick">Choose Backup File</string>
+    <string name="backup_warning_restore_title">Restore from backup?</string>
+    <string name="backup_warning_restore_msg">This will REPLACE all transactions, events, and Tabung currently on this device with the data from the backup file. This cannot be undone. Continue?</string>
+    <string name="btn_restore_confirm">Restore</string>
+    <string name="msg_backup_created">Backup file saved</string>
+    <string name="msg_backup_failed">Failed to create backup: %1$s</string>
+    <string name="msg_restore_success">Data restored successfully. Restarting app…</string>
+    <string name="msg_restore_failed">Restore failed: %1$s</string>
+    <string name="msg_invalid_backup_file">This doesn\'t look like a valid backup file</string>
+    <string name="backup_last_export">Last backup: %1$s</string>
+    <string name="backup_never">No backup made yet on this device</string>
 </resources>

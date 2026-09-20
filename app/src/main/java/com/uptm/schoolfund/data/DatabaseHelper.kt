@@ -302,6 +302,9 @@ class DatabaseHelper(context: Context) :
         private const val DATABASE_NAME = "school_fund.db"
         private const val DATABASE_VERSION = 2
 
+        /** Path to the raw SQLite file on disk — used by BackupActivity to export/restore. */
+        fun databaseFile(context: Context) = context.getDatabasePath(DATABASE_NAME)
+
         const val TABLE_TRANSACTIONS = "transactions"
         const val COL_TX_ID = "id"
         const val COL_TX_TYPE = "type" // "income" or "expense"

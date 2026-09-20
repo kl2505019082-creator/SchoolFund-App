@@ -105,4 +105,26 @@
 
     <!-- Skrin tukar tabung -->
     <string name="switch_fund_title">Tukar Tabung</string>
+
+    <!-- Sandaran & pulih data -->
+    <string name="backup_title">Sandaran &amp; Pulih Data</string>
+    <string name="backup_subtitle">Simpan salinan data anda, atau pulihkan daripada fail sandaran</string>
+    <string name="backup_screen_title">Sandaran &amp; Pulih</string>
+    <string name="backup_export_title">Eksport Data (Backup)</string>
+    <string name="backup_export_desc">Simpan salinan penuh rekod kewangan anda ke dalam fail. Simpan di tempat selamat (Google Drive, emel, komputer) sekiranya telefon ini hilang, rosak, atau di-reset.</string>
+    <string name="btn_export_save">Simpan Fail Sandaran</string>
+    <string name="btn_export_share">Kongsi Fail Sandaran</string>
+    <string name="backup_import_title">Pulihkan Data</string>
+    <string name="backup_import_desc">Pulihkan rekod anda daripada fail sandaran yang pernah dieksport. Ini akan GANTIKAN semua data semasa pada telefon ini.</string>
+    <string name="btn_import_pick">Pilih Fail Sandaran</string>
+    <string name="backup_warning_restore_title">Pulihkan daripada sandaran?</string>
+    <string name="backup_warning_restore_msg">Ini akan GANTIKAN semua transaksi, acara, dan Tabung yang ada sekarang pada telefon ini dengan data daripada fail sandaran. Tindakan ini tidak boleh dibatalkan. Teruskan?</string>
+    <string name="btn_restore_confirm">Pulihkan</string>
+    <string name="msg_backup_created">Fail sandaran disimpan</string>
+    <string name="msg_backup_failed">Gagal cipta sandaran: %1$s</string>
+    <string name="msg_restore_success">Data berjaya dipulihkan. Memulakan semula aplikasi…</string>
+    <string name="msg_restore_failed">Pemulihan gagal: %1$s</string>
+    <string name="msg_invalid_backup_file">Fail ini tidak kelihatan seperti fail sandaran yang sah</string>
+    <string name="backup_last_export">Sandaran terakhir: %1$s</string>
+    <string name="backup_never">Belum ada sandaran dibuat pada telefon ini</string>
 </resources>

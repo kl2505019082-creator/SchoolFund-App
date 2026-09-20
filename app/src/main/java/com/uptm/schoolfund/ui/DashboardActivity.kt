@@ -70,6 +70,9 @@ class DashboardActivity : BaseActivity() {
         findViewById<View>(R.id.buttonRequestFundsDashboard).setOnClickListener {
             startActivity(Intent(this, RoleLoginActivity::class.java))
         }
+        findViewById<View>(R.id.buttonBackupData).setOnClickListener {
+            startActivity(Intent(this, BackupActivity::class.java))
+        }
 
         setupLanguageToggle()
         setupThemeToggle()
