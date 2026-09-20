@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/header_gradient_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <ImageView
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@drawable/card_white"
+            android:padding="6dp"
+            android:src="@drawable/ic_school_logo"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="18dp"
+            android:contentDescription="SMK Perlis" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Permohonan Dana"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log masuk online — untuk Guru, Pengerusi &amp; Bendahari PIBG"
+            android:textColor="#D6E7F2"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginBottom="20dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupMode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@drawable/pill_status_bg"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="4dp"
+            android:layout_marginBottom="18dp">
+
+            <RadioButton
+                android:id="@+id/radioModeLogin"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Log Masuk"
+                android:gravity="center"
+                android:button="@null"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="@color/accent_blue"
+                android:background="@drawable/card_white"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioModeRegister"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Daftar Akaun Baru"
+                android:gravity="center"
+                android:button="@null"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/layoutRegisterFields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pendaftaran sendiri untuk Guru sahaja. Akaun Pengerusi/Bendahari PIBG ditetapkan oleh admin sekolah."
+                android:textColor="#D6E7F2"
+                android:textSize="11sp"
+                android:layout_marginBottom="10dp" />
+
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama penuh"
+                android:textColorHint="@color/text_muted"
+                android:background="@drawable/input_bg"
+                android:layout_marginBottom="12dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textColorHint="@color/text_muted"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password (min 6 aksara)"
+            android:textColorHint="@color/text_muted"
+            android:inputType="textPassword"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Lupa Password?"
+            android:textColor="#D6E7F2"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/buttonRoleLogin"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Log Masuk"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/accent_blue"
+            android:background="@drawable/btn_white_outline"
+            android:backgroundTint="@null"
+            android:elevation="2dp" />
+
+        <ProgressBar
+            android:id="@+id/progressLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

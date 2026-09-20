@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_app">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose which sections to include in this report:"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        android:padding="16dp" />
+
+    <LinearLayout
+        android:id="@+id/itemClassFundCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_white_stroke"
+        android:padding="12dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="10dp">
+
+        <CheckBox
+            android:id="@+id/checkboxClassFund"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Class Fund"
+            android:checked="true"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textClassFundBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp"
+            android:layout_marginStart="36dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/buttonSelectAll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Select all"
+            android:textColor="@color/accent_blue"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/buttonSelectNone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Clear all"
+            android:textColor="@color/text_muted"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:gravity="end"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEventCheckboxes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp" />
+
+    <LinearLayout
+        android:id="@+id/buttonGenerateSelected"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/btn_blue"
+        android:elevation="2dp"
+        android:clickable="true"
+        android:focusable="true">
+        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+            android:src="@drawable/ic_document" android:layout_marginEnd="8dp"
+            android:contentDescription="PDF" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Generate report" android:textStyle="bold"
+            android:textColor="#FFFFFF" android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

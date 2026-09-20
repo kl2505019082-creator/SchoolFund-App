@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">School Fund</string>
+
+    <string name="dashboard_title">Class Fund Dashboard</string>
+    <string name="dashboard_welcome">Welcome, %1$s</string>
+    <string name="label_class_fund_balance">CLASS FUND BALANCE</string>
+
+    <string name="tile_add_transaction">Add transaction</string>
+    <string name="tile_event_budgets">Event budgets</string>
+    <string name="tile_history">History</string>
+    <string name="tile_report">Report</string>
+
+    <string name="request_funds_title">Request funds</string>
+    <string name="request_funds_subtitle">Ask the finance department for approval</string>
+
+    <string name="recent_transactions">Recent transactions</string>
+    <string name="no_transactions_yet">No transactions yet</string>
+</resources>

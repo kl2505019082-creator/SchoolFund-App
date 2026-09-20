@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Dana Sekolah</string>
+
+    <string name="dashboard_title">Papan Pemuka Dana Kelas</string>
+    <string name="dashboard_welcome">Selamat datang, %1$s</string>
+    <string name="label_class_fund_balance">BAKI DANA KELAS</string>
+
+    <string name="tile_add_transaction">Tambah transaksi</string>
+    <string name="tile_event_budgets">Bajet acara</string>
+    <string name="tile_history">Sejarah</string>
+    <string name="tile_report">Laporan</string>
+
+    <string name="request_funds_title">Mohon dana</string>
+    <string name="request_funds_subtitle">Minta kelulusan daripada bahagian kewangan</string>
+
+    <string name="recent_transactions">Transaksi terkini</string>
+    <string name="no_transactions_yet">Belum ada transaksi</string>
+</resources>

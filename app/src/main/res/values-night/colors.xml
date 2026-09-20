@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand colors stay mostly the same for identity, slightly brighter for contrast on dark bg -->
+    <color name="primary_green">#4FA37B</color>
+    <color name="primary_green_dark">#2E6B4F</color>
+    <color name="primary_green_light">#1E332A</color>
+
+    <color name="accent_orange">#D9944A</color>
+    <color name="accent_orange_light">#3A2E1E</color>
+
+    <color name="accent_blue">#5B9BD5</color>
+    <color name="accent_blue_light">#1E2A38</color>
+
+    <color name="accent_purple">#8C7BC4</color>
+
+    <color name="finance_slate">#6E93C4</color>
+    <color name="finance_slate_dark">#4A6FA1</color>
+
+    <color name="danger_red">#E0655A</color>
+    <color name="danger_red_light">#3A2220</color>
+
+    <!-- Neutrals -->
+    <color name="bg_app">#15140F</color>
+    <color name="surface_white">#211F19</color>
+    <color name="border_subtle">#3A382F</color>
+    <color name="text_primary">#F0EEE7</color>
+    <color name="text_secondary">#B7B2A5</color>
+    <color name="text_muted">#8A8478</color>
+</resources>

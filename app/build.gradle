@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.uptm.schoolfund'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.uptm.schoolfund"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding false
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // Firebase (multi-user online extension: fund request + finance approval workflow)
+    implementation platform('com.google.firebase:firebase-bom:33.1.2')
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+}
+
+// The Google Services plugin (and its google-services.json requirement) is only applied
+// when google-services.json actually exists in this module. This lets the app build and
+// run fully offline (login, transactions, event budgets, PDF report) BEFORE Firebase is
+// set up. Once you add google-services.json (see README.md), sync again and this plugin
+// activates automatically — no code change needed.
+if (file('google-services.json').exists()) {
+    apply plugin: 'com.google.gms.google-services'
+}

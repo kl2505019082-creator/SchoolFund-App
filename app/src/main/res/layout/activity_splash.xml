@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F2418">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_background"
+        android:contentDescription="SMK Perlis" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="56dp"
+        android:paddingHorizontal="48dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MEMUATKAN..."
+            android:textColor="#FFD84D"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="10dp" />
+
+        <ProgressBar
+            android:id="@+id/progressSplash"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/progress_track_splash" />
+
+    </LinearLayout>
+
+</FrameLayout>

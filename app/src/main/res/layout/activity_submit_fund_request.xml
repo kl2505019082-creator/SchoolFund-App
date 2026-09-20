@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AMOUNT REQUESTED (RM)"
+            android:textSize="11sp"
+            android:letterSpacing="0.06"
+            android:textColor="@color/text_muted"
+            android:layout_marginBottom="6dp" />
+        <EditText
+            android:id="@+id/editRequestAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="0.00"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REASON / PURPOSE"
+            android:textSize="11sp"
+            android:letterSpacing="0.06"
+            android:textColor="@color/text_muted"
+            android:layout_marginBottom="6dp" />
+        <EditText
+            android:id="@+id/editRequestReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e.g. Additional budget needed for Sports Day prizes"
+            android:minLines="3"
+            android:gravity="top"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LINK TO EVENT (OPTIONAL)"
+            android:textSize="11sp"
+            android:letterSpacing="0.06"
+            android:textColor="@color/text_muted"
+            android:layout_marginBottom="6dp" />
+        <Spinner
+            android:id="@+id/spinnerRequestEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KERTAS KERJA (PDF) — WAJIB"
+            android:textSize="11sp"
+            android:letterSpacing="0.06"
+            android:textColor="@color/text_muted"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mesti ada tajuk, objektif, dan perbelanjaan yang dirancang. Saiz maksimum 500KB."
+            android:textSize="11sp"
+            android:textColor="@color/text_muted"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:id="@+id/buttonAttachWorkPaper"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/btn_outline_neutral"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_document"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Attach PDF" />
+
+            <TextView
+                android:id="@+id/textAttachWorkPaperLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lampirkan kertas kerja (PDF)"
+                android:textColor="@color/accent_orange"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonSubmitRequest"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="Send request to finance dept."
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_orange"
+            android:backgroundTint="@null"
+            android:textColor="#FFFFFF"
+            android:elevation="2dp" />
+
+    </LinearLayout>
+</ScrollView>

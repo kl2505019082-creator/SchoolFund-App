@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand -->
+    <color name="primary_green">#2E6B4F</color>
+    <color name="primary_green_dark">#245840</color>
+    <color name="primary_green_light">#EAF3EE</color>
+
+    <color name="accent_orange">#B9770E</color>
+    <color name="accent_orange_light">#FCF3E6</color>
+
+    <color name="accent_blue">#2471A3</color>
+    <color name="accent_blue_light">#E8F1F8</color>
+
+    <color name="accent_purple">#5B4B8A</color>
+
+    <color name="finance_slate">#4A6FA1</color>
+    <color name="finance_slate_dark">#3A5A87</color>
+
+    <color name="danger_red">#C0392B</color>
+    <color name="danger_red_light">#FBEAEA</color>
+
+    <!-- Neutrals -->
+    <color name="bg_app">#F5F4F0</color>
+    <color name="surface_white">#FFFFFF</color>
+    <color name="border_subtle">#E5E3DD</color>
+    <color name="text_primary">#26211C</color>
+    <color name="text_secondary">#6B655A</color>
+    <color name="text_muted">#A39D8F</color>
+</resources>

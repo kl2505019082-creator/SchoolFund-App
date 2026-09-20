@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/card_white_stroke"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:id="@+id/iconCircleTx"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/icon_circle_green"
+        android:gravity="center"
+        android:layout_marginEnd="12dp">
+
+        <ImageView
+            android:id="@+id/imageTxIcon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_arrow_up"
+            android:contentDescription="Transaction type" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textTxDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/textTxMeta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="@color/text_muted"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageReceiptThumb"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="10dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/card_white_stroke"
+        android:visibility="gone"
+        android:contentDescription="Receipt thumbnail" />
+
+    <TextView
+        android:id="@+id/textTxAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="6dp" />
+
+    <ImageButton
+        android:id="@+id/buttonDeleteTx"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_trash"
+        android:background="@android:color/transparent"
+        android:padding="7dp"
+        android:contentDescription="Delete transaction" />
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/bg_app">
+
+    <Button
+        android:id="@+id/buttonNewRequest"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="+  New fund request"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:background="@drawable/btn_orange"
+        android:backgroundTint="@null"
+        android:textColor="#FFFFFF"
+        android:elevation="2dp"
+        android:layout_marginBottom="14dp" />
+
+    <TextView
+        android:id="@+id/textRequestsEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tiada permohonan lagi. Tekan &quot;New fund request&quot; untuk mula."
+        android:textColor="@color/text_muted"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerRequests"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

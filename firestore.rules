@@ -1,0 +1,76 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function roleOf(uid) {
+      return get(/databases/$(database)/documents/users/$(uid)).data.role;
+    }
+
+    function isPengerusi() {
+      return isSignedIn() && roleOf(request.auth.uid) == 'pengerusi';
+    }
+
+    function isBendahari() {
+      return isSignedIn() && roleOf(request.auth.uid) == 'bendahari';
+    }
+
+    match /users/{uid} {
+      // A user may only read their own profile — nobody can list or browse other users.
+      allow read: if isSignedIn() && request.auth.uid == uid;
+
+      // Anyone signed in may self-register as "teacher". "pengerusi" and "bendahari"
+      // accounts are NOT self-creatable — the school admin creates those two accounts
+      // directly in the Firebase Console (Authentication + a users/{uid} doc with the
+      // right role), since there is only ever one Pengerusi PIBG and one Bendahari PIBG.
+      allow create: if isSignedIn() && request.auth.uid == uid &&
+        request.resource.data.role == 'teacher';
+
+      // A user may update their own profile (e.g. name) but can NEVER change their own
+      // role afterwards — prevents a teacher account from self-upgrading later.
+      allow update: if isSignedIn() && request.auth.uid == uid &&
+        request.resource.data.role == resource.data.role;
+
+      allow delete: if false;
+    }
+
+    match /fund_requests/{requestId} {
+      // A request is readable by the teacher who made it, by the Pengerusi (who decides
+      // it) or by the Bendahari (who needs to see approved ones to pay out).
+      allow read: if isSignedIn() &&
+        (resource.data.teacherUid == request.auth.uid || isPengerusi() || isBendahari());
+
+      // Only a signed-in teacher may create a request, only for themselves, and it must
+      // start "pending" with a valid positive amount.
+      allow create: if isSignedIn() &&
+        request.resource.data.teacherUid == request.auth.uid &&
+        request.resource.data.status == 'pending' &&
+        request.resource.data.amount is number &&
+        request.resource.data.amount > 0;
+
+      // Only the Pengerusi may decide a pending request (approve/reject + remarks). The
+      // original teacher, amount and reason can never be altered by that update.
+      allow update: if isPengerusi() &&
+        resource.data.status == 'pending' &&
+        request.resource.data.teacherUid == resource.data.teacherUid &&
+        request.resource.data.amount == resource.data.amount &&
+        request.resource.data.reason == resource.data.reason &&
+        request.resource.data.status in ['approved', 'rejected'];
+
+      // Only the Bendahari may mark an ALREADY-APPROVED request as disbursed. Nothing
+      // about the original request or the Pengerusi's decision can be altered by this.
+      allow update: if isBendahari() &&
+        resource.data.status == 'approved' &&
+        request.resource.data.teacherUid == resource.data.teacherUid &&
+        request.resource.data.amount == resource.data.amount &&
+        request.resource.data.reason == resource.data.reason &&
+        request.resource.data.decidedBy == resource.data.decidedBy &&
+        request.resource.data.status == 'disbursed';
+
+      allow delete: if false;
+    }
+  }
+}
