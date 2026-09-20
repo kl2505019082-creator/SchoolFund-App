@@ -65,7 +65,7 @@ class RoleLoginActivity : BaseActivity() {
             styleTab(radioModeRegister, isRegister)
             registerFields.visibility = if (isRegister) View.VISIBLE else View.GONE
             forgotPasswordText.visibility = if (isRegister) View.GONE else View.VISIBLE
-            submitButton.text = if (isRegister) "Daftar Akaun" else "Log Masuk"
+            submitButton.text = if (isRegister) getString(R.string.btn_register) else getString(R.string.btn_login)
         }
 
         modeGroup.setOnCheckedChangeListener { _, checkedId ->
@@ -76,7 +76,7 @@ class RoleLoginActivity : BaseActivity() {
         forgotPasswordText.setOnClickListener {
             val email = emailInput.text.toString().trim()
             if (email.isEmpty()) {
-                Toast.makeText(this, "Taip emel awak dulu di atas, lepas tu tekan Lupa Password", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.msg_enter_email_first), Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
             FirebaseRepository.sendPasswordReset(email) { _, message ->
@@ -88,14 +88,14 @@ class RoleLoginActivity : BaseActivity() {
             val uid = FirebaseRepository.currentUid
             if (uid == null) {
                 progress.visibility = View.GONE
-                Toast.makeText(this, "Log masuk gagal", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.msg_login_failed), Toast.LENGTH_SHORT).show()
                 return
             }
             FirebaseRepository.getUserRole(uid) { actualRole, actualName, mustChangePassword ->
                 progress.visibility = View.GONE
                 if (actualRole == null) {
                     FirebaseRepository.logout()
-                    Toast.makeText(this, "Tidak dapat muatkan profil akaun", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.msg_cannot_load_profile), Toast.LENGTH_SHORT).show()
                     return@getUserRole
                 }
 
@@ -118,20 +118,17 @@ class RoleLoginActivity : BaseActivity() {
 
                 if (mustChangePassword) {
                     AlertDialog.Builder(this)
-                        .setTitle("Tukar password anda")
-                        .setMessage(
-                            "Password ini ditetapkan oleh admin sekolah semasa akaun dicipta. " +
-                                "Untuk keselamatan, sila tetapkan password baru yang hanya anda tahu."
-                        )
+                        .setTitle(getString(R.string.dialog_change_password_title))
+                        .setMessage(getString(R.string.dialog_change_password_msg))
                         .setCancelable(false)
-                        .setPositiveButton("Hantar Emel Reset") { _, _ ->
+                        .setPositiveButton(getString(R.string.btn_send_reset_email)) { _, _ ->
                             FirebaseRepository.sendPasswordReset(email) { _, message ->
                                 Toast.makeText(this, message, Toast.LENGTH_LONG).show()
                             }
                             FirebaseRepository.clearMustChangePassword(uid)
                             proceedToDashboard()
                         }
-                        .setNegativeButton("Nanti sahaja") { _, _ -> proceedToDashboard() }
+                        .setNegativeButton(getString(R.string.btn_later)) { _, _ -> proceedToDashboard() }
                         .show()
                 } else {
                     proceedToDashboard()
@@ -145,14 +142,14 @@ class RoleLoginActivity : BaseActivity() {
             val isRegister = modeGroup.checkedRadioButtonId == R.id.radioModeRegister
 
             if (email.isEmpty() || password.length < 6) {
-                Toast.makeText(this, "Isi emel dan password (minimum 6 aksara)", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.msg_fill_email_password), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (isRegister) {
                 val name = nameInput.text.toString().trim()
                 if (name.isEmpty()) {
-                    Toast.makeText(this, "Isi nama penuh", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.msg_fill_full_name), Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
                 progress.visibility = View.VISIBLE

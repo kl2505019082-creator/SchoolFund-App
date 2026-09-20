@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MEMUATKAN..."
+            android:text="@string/splash_loading"
             android:textColor="#FFD84D"
             android:textStyle="bold"
             android:textSize="14sp"

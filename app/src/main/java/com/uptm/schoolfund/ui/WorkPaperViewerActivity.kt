@@ -29,18 +29,19 @@ import java.io.FileOutputStream
 class WorkPaperViewerActivity : BaseActivity() {
 
     private var sourceFile: File? = null
-    private var displayName: String = "kertas_kerja.pdf"
+    private var displayName: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_work_paper_viewer)
 
+        displayName = getString(R.string.default_work_paper_name)
         val path = intent.getStringExtra(EXTRA_FILE_PATH)
         displayName = intent.getStringExtra(EXTRA_FILE_NAME) ?: displayName
         findViewById<TextView>(R.id.textWorkPaperTitle).text = displayName
 
         if (path == null) {
-            Toast.makeText(this, "Fail tidak dijumpai", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.msg_file_not_found), Toast.LENGTH_SHORT).show()
             finish()
             return
         }
@@ -82,7 +83,7 @@ class WorkPaperViewerActivity : BaseActivity() {
             renderer.close()
             pfd.close()
         } catch (e: Exception) {
-            Toast.makeText(this, "Tidak dapat papar PDF: ${e.message}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.msg_cannot_display_pdf, e.message ?: ""), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -94,7 +95,7 @@ class WorkPaperViewerActivity : BaseActivity() {
             putExtra(Intent.EXTRA_STREAM, uri)
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
-        startActivity(Intent.createChooser(shareIntent, "Kongsi kertas kerja"))
+        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_chooser_title)))
     }
 
     /** Saves a copy into the device's public Downloads folder, visible in any Files app. */
@@ -114,9 +115,9 @@ class WorkPaperViewerActivity : BaseActivity() {
                     values.clear()
                     values.put(MediaStore.Downloads.IS_PENDING, 0)
                     resolver.update(uri, values, null, null)
-                    Toast.makeText(this, "Disimpan ke folder Downloads", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.msg_saved_downloads), Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "Gagal simpan fail", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.msg_save_failed), Toast.LENGTH_SHORT).show()
                 }
             } else {
                 @Suppress("DEPRECATION")
@@ -124,10 +125,10 @@ class WorkPaperViewerActivity : BaseActivity() {
                 if (!downloadsDir.exists()) downloadsDir.mkdirs()
                 val destFile = File(downloadsDir, displayName)
                 FileOutputStream(destFile).use { out -> file.inputStream().use { it.copyTo(out) } }
-                Toast.makeText(this, "Disimpan ke ${destFile.path}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.msg_saved_to_path, destFile.path), Toast.LENGTH_SHORT).show()
             }
         } catch (e: Exception) {
-            Toast.makeText(this, "Gagal muat turun: ${e.message}", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.msg_download_failed, e.message ?: ""), Toast.LENGTH_LONG).show()
         }
     }
 

@@ -41,7 +41,7 @@ class SubmitFundRequestActivity : BaseActivity() {
         submitButton.backgroundTintList = null
 
         val events = db.getAllEvents()
-        val eventNames = mutableListOf("Not linked to a specific event")
+        val eventNames = mutableListOf(getString(R.string.not_linked_to_event))
         val eventIds = mutableListOf<Long?>(null)
         events.forEach { eventNames.add(it.name); eventIds.add(it.id) }
         eventSpinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, eventNames)
@@ -49,9 +49,9 @@ class SubmitFundRequestActivity : BaseActivity() {
         attachButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT).apply { type = "application/pdf" }
             try {
-                startActivityForResult(Intent.createChooser(intent, "Pilih kertas kerja (PDF)"), REQUEST_PICK_PDF)
+                startActivityForResult(Intent.createChooser(intent, getString(R.string.pdf_chooser_title)), REQUEST_PICK_PDF)
             } catch (e: Exception) {
-                Toast.makeText(this, "Tiada aplikasi fail tersedia", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.msg_no_file_app), Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -60,26 +60,26 @@ class SubmitFundRequestActivity : BaseActivity() {
             val reason = reasonInput.text.toString().trim()
 
             if (amount == null || amount <= 0) {
-                Toast.makeText(this, "Enter a valid amount", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.msg_enter_valid_amount), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if (reason.isEmpty()) {
-                Toast.makeText(this, "Explain what the funds are for", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.msg_explain_funds), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val pdfUri = workPaperUri
             if (pdfUri == null) {
-                Toast.makeText(this, "Sila lampirkan kertas kerja (PDF) — wajib", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.msg_attach_mandatory), Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
             val pdfBase64 = try {
                 encodePdfToBase64(pdfUri)
             } catch (e: FileTooLargeException) {
-                Toast.makeText(this, "PDF terlalu besar (maksimum 500KB). Sila kecilkan fail.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.msg_pdf_too_large), Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             } catch (e: Exception) {
-                Toast.makeText(this, "Gagal membaca PDF: ${e.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.msg_failed_read_pdf, e.message ?: ""), Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
@@ -99,10 +99,10 @@ class SubmitFundRequestActivity : BaseActivity() {
             FirebaseRepository.submitFundRequest(request) { success ->
                 submitButton.isEnabled = true
                 if (success) {
-                    Toast.makeText(this, "Request sent to finance department", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.msg_request_sent), Toast.LENGTH_SHORT).show()
                     finish()
                 } else {
-                    Toast.makeText(this, "Failed to send request. Check internet connection.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.msg_request_failed), Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -122,7 +122,7 @@ class SubmitFundRequestActivity : BaseActivity() {
         if (requestCode == REQUEST_PICK_PDF && resultCode == Activity.RESULT_OK) {
             val uri = data?.data ?: return
             workPaperUri = uri
-            workPaperFileName = queryFileName(uri) ?: "kertas_kerja.pdf"
+            workPaperFileName = queryFileName(uri) ?: getString(R.string.default_work_paper_name)
             findViewById<TextView>(R.id.textAttachWorkPaperLabel).text = workPaperFileName
         }
     }

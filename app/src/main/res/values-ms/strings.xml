@@ -15,4 +15,94 @@
 
     <string name="recent_transactions">Transaksi terkini</string>
     <string name="no_transactions_yet">Belum ada transaksi</string>
+
+    <!-- Log masuk / daftar peranan -->
+    <string name="role_login_title">Permohonan Dana</string>
+    <string name="role_login_subtitle">Log masuk online — untuk Guru, Pengerusi &amp; Bendahari PIBG</string>
+    <string name="tab_login">Log Masuk</string>
+    <string name="tab_register">Daftar Akaun Baru</string>
+    <string name="register_note">Pendaftaran sendiri untuk Guru sahaja. Akaun Pengerusi/Bendahari PIBG ditetapkan oleh admin sekolah.</string>
+    <string name="hint_full_name">Nama penuh</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password_min">Password (min 6 aksara)</string>
+    <string name="forgot_password">Lupa Password?</string>
+    <string name="btn_login">Log Masuk</string>
+    <string name="btn_register">Daftar Akaun</string>
+    <string name="msg_enter_email_first">Taip emel awak dulu di atas, lepas tu tekan Lupa Password</string>
+    <string name="msg_login_failed">Log masuk gagal</string>
+    <string name="msg_cannot_load_profile">Tidak dapat muatkan profil akaun</string>
+    <string name="msg_fill_email_password">Isi emel dan password (minimum 6 aksara)</string>
+    <string name="msg_fill_full_name">Isi nama penuh</string>
+    <string name="dialog_change_password_title">Tukar password anda</string>
+    <string name="dialog_change_password_msg">Password ini ditetapkan oleh admin sekolah semasa akaun dicipta. Untuk keselamatan, sila tetapkan password baru yang hanya anda tahu.</string>
+    <string name="btn_send_reset_email">Hantar Emel Reset</string>
+    <string name="btn_later">Nanti sahaja</string>
+
+    <!-- Hantar permohonan dana -->
+    <string name="label_amount_requested">JUMLAH DIMOHON (RM)</string>
+    <string name="label_reason_purpose">SEBAB / TUJUAN</string>
+    <string name="hint_reason_example">cth. Bajet tambahan diperlukan untuk hadiah Hari Sukan</string>
+    <string name="label_link_event_optional">KAITKAN DENGAN ACARA (PILIHAN)</string>
+    <string name="not_linked_to_event">Tidak dikaitkan dengan acara tertentu</string>
+    <string name="label_work_paper_mandatory">KERTAS KERJA (PDF) — WAJIB</string>
+    <string name="work_paper_requirement">Mesti ada tajuk, objektif, dan perbelanjaan yang dirancang. Saiz maksimum 500KB.</string>
+    <string name="btn_attach_work_paper">Lampirkan kertas kerja (PDF)</string>
+    <string name="btn_send_request">Hantar permohonan ke bahagian kewangan</string>
+    <string name="pdf_chooser_title">Pilih kertas kerja (PDF)</string>
+    <string name="msg_no_file_app">Tiada aplikasi fail tersedia</string>
+    <string name="msg_enter_valid_amount">Masukkan jumlah yang sah</string>
+    <string name="msg_explain_funds">Terangkan untuk apa dana ini digunakan</string>
+    <string name="msg_attach_mandatory">Sila lampirkan kertas kerja (PDF) — wajib</string>
+    <string name="msg_pdf_too_large">PDF terlalu besar (maksimum 500KB). Sila kecilkan fail.</string>
+    <string name="msg_failed_read_pdf">Gagal membaca PDF: %1$s</string>
+    <string name="msg_request_sent">Permohonan telah dihantar ke bahagian kewangan</string>
+    <string name="msg_request_failed">Gagal menghantar permohonan. Semak sambungan internet.</string>
+    <string name="default_work_paper_name">kertas_kerja.pdf</string>
+
+    <!-- Senarai permohonan dana -->
+    <string name="btn_new_fund_request">+  Permohonan dana baharu</string>
+    <string name="msg_no_requests_yet">Tiada permohonan lagi. Tekan \"Permohonan dana baharu\" untuk mula.</string>
+
+    <!-- Kad permohonan dana -->
+    <string name="btn_clear_request">✕ Buang</string>
+    <string name="status_approved">Diluluskan</string>
+    <string name="status_rejected">Ditolak</string>
+    <string name="status_disbursed">Duit Dikeluarkan</string>
+    <string name="status_pending">Belum Diputuskan</string>
+    <string name="remarks_approved_by">Diluluskan oleh %1$s: “%2$s”</string>
+    <string name="remarks_rejected_by">Ditolak oleh %1$s: “%2$s”</string>
+    <string name="btn_view_work_paper">📄  Lihat Kertas Kerja (PDF)</string>
+    <string name="btn_approve">✓  Luluskan</string>
+    <string name="btn_reject">✕  Tolak</string>
+    <string name="btn_disburse">💵  Tandakan Duit Dikeluarkan</string>
+    <string name="hint_remarks_optional">Catatan (pilihan)</string>
+    <string name="hint_reject_reason_mandatory">Sebab ditolak (wajib) — guru akan nampak ni</string>
+    <string name="dialog_approve_title">Luluskan permohonan</string>
+    <string name="dialog_reject_title">Tolak permohonan</string>
+    <string name="btn_approve_confirm">Luluskan</string>
+    <string name="btn_reject_confirm">Tolak</string>
+    <string name="btn_cancel">Batal</string>
+    <string name="error_state_reason">Sila nyatakan sebab penolakan</string>
+    <string name="dialog_disburse_title">Tandakan duit dikeluarkan</string>
+    <string name="dialog_disburse_msg">Sahkan RM %1$s untuk %2$s telah dibayar?</string>
+    <string name="btn_confirm">Sahkan</string>
+    <string name="msg_failed_open_work_paper">Gagal membuka kertas kerja: %1$s</string>
+
+    <!-- Pelihat kertas kerja -->
+    <string name="work_paper_title_default">Kertas Kerja</string>
+    <string name="btn_download">Muat Turun</string>
+    <string name="btn_share">Kongsi</string>
+    <string name="msg_file_not_found">Fail tidak dijumpai</string>
+    <string name="msg_cannot_display_pdf">Tidak dapat papar PDF: %1$s</string>
+    <string name="share_chooser_title">Kongsi kertas kerja</string>
+    <string name="msg_saved_downloads">Disimpan ke folder Downloads</string>
+    <string name="msg_save_failed">Gagal simpan fail</string>
+    <string name="msg_saved_to_path">Disimpan ke %1$s</string>
+    <string name="msg_download_failed">Gagal muat turun: %1$s</string>
+
+    <!-- Splash -->
+    <string name="splash_loading">MEMUATKAN...</string>
+
+    <!-- Skrin tukar tabung -->
+    <string name="switch_fund_title">Tukar Tabung</string>
 </resources>

@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AMOUNT REQUESTED (RM)"
+            android:text="@string/label_amount_requested"
             android:textSize="11sp"
             android:letterSpacing="0.06"
             android:textColor="@color/text_muted"
@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="REASON / PURPOSE"
+            android:text="@string/label_reason_purpose"
             android:textSize="11sp"
             android:letterSpacing="0.06"
             android:textColor="@color/text_muted"
@@ -39,7 +39,7 @@
             android:id="@+id/editRequestReason"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="e.g. Additional budget needed for Sports Day prizes"
+            android:hint="@string/hint_reason_example"
             android:minLines="3"
             android:gravity="top"
             android:background="@drawable/input_bg"
@@ -48,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LINK TO EVENT (OPTIONAL)"
+            android:text="@string/label_link_event_optional"
             android:textSize="11sp"
             android:letterSpacing="0.06"
             android:textColor="@color/text_muted"
@@ -63,7 +63,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="KERTAS KERJA (PDF) — WAJIB"
+            android:text="@string/label_work_paper_mandatory"
             android:textSize="11sp"
             android:letterSpacing="0.06"
             android:textColor="@color/text_muted"
@@ -72,7 +72,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mesti ada tajuk, objektif, dan perbelanjaan yang dirancang. Saiz maksimum 500KB."
+            android:text="@string/work_paper_requirement"
             android:textSize="11sp"
             android:textColor="@color/text_muted"
             android:layout_marginBottom="10dp" />
@@ -99,7 +99,7 @@
                 android:id="@+id/textAttachWorkPaperLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lampirkan kertas kerja (PDF)"
+                android:text="@string/btn_attach_work_paper"
                 android:textColor="@color/accent_orange"
                 android:textStyle="bold"
                 android:textSize="14sp" />
@@ -109,7 +109,7 @@
             android:id="@+id/buttonSubmitRequest"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:text="Send request to finance dept."
+            android:text="@string/btn_send_request"
             android:textAllCaps="false"
             android:textSize="15sp"
             android:textStyle="bold"

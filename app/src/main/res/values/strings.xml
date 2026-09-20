@@ -15,4 +15,94 @@
 
     <string name="recent_transactions">Recent transactions</string>
     <string name="no_transactions_yet">No transactions yet</string>
+
+    <!-- Role login / register -->
+    <string name="role_login_title">Fund Request</string>
+    <string name="role_login_subtitle">Online login — for Teachers, Chairman &amp; Treasurer of PTA</string>
+    <string name="tab_login">Log In</string>
+    <string name="tab_register">Register New Account</string>
+    <string name="register_note">Self-registration for Teachers only. Chairman/Treasurer accounts are set up by the school admin.</string>
+    <string name="hint_full_name">Full name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password_min">Password (min 6 characters)</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_register">Register Account</string>
+    <string name="msg_enter_email_first">Type your email above first, then tap Forgot Password</string>
+    <string name="msg_login_failed">Login failed</string>
+    <string name="msg_cannot_load_profile">Could not load account profile</string>
+    <string name="msg_fill_email_password">Fill in email and password (minimum 6 characters)</string>
+    <string name="msg_fill_full_name">Fill in full name</string>
+    <string name="dialog_change_password_title">Change your password</string>
+    <string name="dialog_change_password_msg">This password was set by the school admin when the account was created. For security, please set a new password only you know.</string>
+    <string name="btn_send_reset_email">Send Reset Email</string>
+    <string name="btn_later">Later</string>
+
+    <!-- Submit fund request -->
+    <string name="label_amount_requested">AMOUNT REQUESTED (RM)</string>
+    <string name="label_reason_purpose">REASON / PURPOSE</string>
+    <string name="hint_reason_example">e.g. Additional budget needed for Sports Day prizes</string>
+    <string name="label_link_event_optional">LINK TO EVENT (OPTIONAL)</string>
+    <string name="not_linked_to_event">Not linked to a specific event</string>
+    <string name="label_work_paper_mandatory">WORK PAPER (PDF) — MANDATORY</string>
+    <string name="work_paper_requirement">Must include a title, objectives, and planned spending. Maximum size 500KB.</string>
+    <string name="btn_attach_work_paper">Attach work paper (PDF)</string>
+    <string name="btn_send_request">Send request to finance dept.</string>
+    <string name="pdf_chooser_title">Select work paper (PDF)</string>
+    <string name="msg_no_file_app">No file app available</string>
+    <string name="msg_enter_valid_amount">Enter a valid amount</string>
+    <string name="msg_explain_funds">Explain what the funds are for</string>
+    <string name="msg_attach_mandatory">Please attach the work paper (PDF) — mandatory</string>
+    <string name="msg_pdf_too_large">PDF too large (maximum 500KB). Please reduce the file size.</string>
+    <string name="msg_failed_read_pdf">Failed to read PDF: %1$s</string>
+    <string name="msg_request_sent">Request sent to finance department</string>
+    <string name="msg_request_failed">Failed to send request. Check internet connection.</string>
+    <string name="default_work_paper_name">work_paper.pdf</string>
+
+    <!-- Fund request list -->
+    <string name="btn_new_fund_request">+  New fund request</string>
+    <string name="msg_no_requests_yet">No requests yet. Tap \"New fund request\" to start.</string>
+
+    <!-- Fund request card -->
+    <string name="btn_clear_request">✕ Clear</string>
+    <string name="status_approved">Approved</string>
+    <string name="status_rejected">Rejected</string>
+    <string name="status_disbursed">Disbursed</string>
+    <string name="status_pending">Pending</string>
+    <string name="remarks_approved_by">Approved by %1$s: “%2$s”</string>
+    <string name="remarks_rejected_by">Rejected by %1$s: “%2$s”</string>
+    <string name="btn_view_work_paper">📄  View Work Paper (PDF)</string>
+    <string name="btn_approve">✓  Approve</string>
+    <string name="btn_reject">✕  Reject</string>
+    <string name="btn_disburse">💵  Mark Funds Disbursed</string>
+    <string name="hint_remarks_optional">Remarks (optional)</string>
+    <string name="hint_reject_reason_mandatory">Reason for rejection (mandatory) — teacher will see this</string>
+    <string name="dialog_approve_title">Approve request</string>
+    <string name="dialog_reject_title">Reject request</string>
+    <string name="btn_approve_confirm">Approve</string>
+    <string name="btn_reject_confirm">Reject</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="error_state_reason">Please state the reason for rejection</string>
+    <string name="dialog_disburse_title">Mark funds as disbursed</string>
+    <string name="dialog_disburse_msg">Confirm RM %1$s for %2$s has been paid?</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="msg_failed_open_work_paper">Failed to open work paper: %1$s</string>
+
+    <!-- Work paper viewer -->
+    <string name="work_paper_title_default">Work Paper</string>
+    <string name="btn_download">Download</string>
+    <string name="btn_share">Share</string>
+    <string name="msg_file_not_found">File not found</string>
+    <string name="msg_cannot_display_pdf">Cannot display PDF: %1$s</string>
+    <string name="share_chooser_title">Share work paper</string>
+    <string name="msg_saved_downloads">Saved to Downloads folder</string>
+    <string name="msg_save_failed">Failed to save file</string>
+    <string name="msg_saved_to_path">Saved to %1$s</string>
+    <string name="msg_download_failed">Failed to download: %1$s</string>
+
+    <!-- Splash -->
+    <string name="splash_loading">LOADING...</string>
+
+    <!-- Switch fund sheet -->
+    <string name="switch_fund_title">Switch Fund</string>
 </resources>

@@ -52,6 +52,7 @@ class FundRequestAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val context = holder.itemView.context
         val req = items[position]
         holder.teacher.text = req.teacherName
         holder.amount.text = formatter.format(req.amount)
@@ -60,10 +61,10 @@ class FundRequestAdapter(
         holder.meta.text = dateFormat.format(Date(req.requestedAt)) + eventPart
 
         holder.status.text = when (req.status) {
-            "approved" -> "Diluluskan"
-            "rejected" -> "Ditolak"
-            "disbursed" -> "Duit Dikeluarkan"
-            else -> "Pending"
+            "approved" -> context.getString(R.string.status_approved)
+            "rejected" -> context.getString(R.string.status_rejected)
+            "disbursed" -> context.getString(R.string.status_disbursed)
+            else -> context.getString(R.string.status_pending)
         }
         holder.status.setTextColor(
             when (req.status) {
@@ -80,8 +81,8 @@ class FundRequestAdapter(
         val showRemarks = (req.status == "approved" || req.status == "rejected") && req.financeRemarks.isNotBlank()
         holder.remarks.visibility = if (showRemarks) View.VISIBLE else View.GONE
         if (showRemarks) {
-            val verb = if (req.status == "approved") "Diluluskan" else "Ditolak"
-            holder.remarks.text = "$verb oleh ${req.decidedBy}: “${req.financeRemarks}”"
+            val template = if (req.status == "approved") R.string.remarks_approved_by else R.string.remarks_rejected_by
+            holder.remarks.text = context.getString(template, req.decidedBy, req.financeRemarks)
         }
 
         holder.workPaperBtn.visibility = if (req.workPaperBase64.isNotBlank()) View.VISIBLE else View.GONE
@@ -115,7 +116,7 @@ class FundRequestAdapter(
         try {
             val bytes = Base64.decode(req.workPaperBase64, Base64.NO_WRAP)
             val dir = File(context.cacheDir, "work_papers").apply { mkdirs() }
-            val fileName = req.workPaperFileName.ifBlank { "kertas_kerja.pdf" }
+            val fileName = req.workPaperFileName.ifBlank { context.getString(R.string.default_work_paper_name) }
             val file = File(dir, "${req.id}_$fileName")
             FileOutputStream(file).use { it.write(bytes) }
 
@@ -125,27 +126,27 @@ class FundRequestAdapter(
             }
             context.startActivity(intent)
         } catch (e: Exception) {
-            Toast.makeText(context, "Gagal membuka kertas kerja: ${e.message}", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, context.getString(R.string.msg_failed_open_work_paper, e.message ?: ""), Toast.LENGTH_LONG).show()
         }
     }
 
     private fun promptDecision(holder: ViewHolder, req: FundRequest, approve: Boolean) {
         val context = holder.itemView.context
         val input = EditText(context).apply {
-            hint = if (approve) "Catatan (pilihan)" else "Sebab ditolak (wajib) — guru akan nampak ni"
+            hint = if (approve) context.getString(R.string.hint_remarks_optional) else context.getString(R.string.hint_reject_reason_mandatory)
         }
         val dialog = AlertDialog.Builder(context)
-            .setTitle(if (approve) "Luluskan permohonan" else "Tolak permohonan")
+            .setTitle(if (approve) context.getString(R.string.dialog_approve_title) else context.getString(R.string.dialog_reject_title))
             .setMessage("${req.teacherName} — ${formatter.format(req.amount)}")
             .setView(input)
-            .setPositiveButton(if (approve) "Luluskan" else "Tolak", null)
-            .setNegativeButton("Batal", null)
+            .setPositiveButton(if (approve) context.getString(R.string.btn_approve_confirm) else context.getString(R.string.btn_reject_confirm), null)
+            .setNegativeButton(context.getString(R.string.btn_cancel), null)
             .create()
         dialog.setOnShowListener {
             dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                 val remarks = input.text.toString().trim()
                 if (!approve && remarks.isEmpty()) {
-                    input.error = "Sila nyatakan sebab penolakan"
+                    input.error = context.getString(R.string.error_state_reason)
                     return@setOnClickListener
                 }
                 onDecide?.invoke(req, approve, remarks)
@@ -158,10 +159,10 @@ class FundRequestAdapter(
     private fun promptDisburse(holder: ViewHolder, req: FundRequest) {
         val context = holder.itemView.context
         AlertDialog.Builder(context)
-            .setTitle("Tandakan duit dikeluarkan")
-            .setMessage("Sahkan RM ${formatter.format(req.amount)} untuk ${req.teacherName} telah dibayar?")
-            .setPositiveButton("Sahkan") { _, _ -> onDisburse?.invoke(req) }
-            .setNegativeButton("Batal", null)
+            .setTitle(context.getString(R.string.dialog_disburse_title))
+            .setMessage(context.getString(R.string.dialog_disburse_msg, formatter.format(req.amount), req.teacherName))
+            .setPositiveButton(context.getString(R.string.btn_confirm)) { _, _ -> onDisburse?.invoke(req) }
+            .setNegativeButton(context.getString(R.string.btn_cancel), null)
             .show()
     }
 
