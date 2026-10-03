@@ -106,6 +106,20 @@
     <!-- Skrin tukar tabung -->
     <string name="switch_fund_title">Tukar Tabung</string>
 
+    <!-- Cari/tapis sejarah transaksi -->
+    <string name="hint_search_history">Cari keterangan, acara, tarikh atau jumlah</string>
+    <string name="filter_all">Semua</string>
+    <string name="filter_income">Pendapatan</string>
+    <string name="filter_expense">Perbelanjaan</string>
+    <string name="msg_no_matching_transactions">Tiada transaksi sepadan</string>
+
+    <!-- Sahkan padam / buat asal -->
+    <string name="dialog_delete_tx_title">Padam transaksi ini?</string>
+    <string name="dialog_delete_tx_msg">Baki akan dikemas kini. Anda boleh buat asal sejurus selepas padam.</string>
+    <string name="btn_delete">Padam</string>
+    <string name="btn_undo">BUAT ASAL</string>
+    <string name="msg_tx_deleted">Transaksi dipadam</string>
+
     <!-- Sandaran & pulih data -->
     <string name="backup_title">Sandaran &amp; Pulih Data</string>
     <string name="backup_subtitle">Simpan salinan data anda, atau pulihkan daripada fail sandaran</string>

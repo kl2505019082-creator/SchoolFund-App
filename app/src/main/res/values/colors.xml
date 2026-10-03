@@ -26,4 +26,5 @@
     <color name="text_primary">#26211C</color>
     <color name="text_secondary">#6B655A</color>
     <color name="text_muted">#A39D8F</color>
+    <color name="launcher_background">#FFFFFF</color>
 </resources>

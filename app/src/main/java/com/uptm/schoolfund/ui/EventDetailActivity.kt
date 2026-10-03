@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uptm.schoolfund.R
 import com.uptm.schoolfund.adapter.TransactionAdapter
 import com.uptm.schoolfund.data.DatabaseHelper
+import com.uptm.schoolfund.util.DeleteHelper
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -71,8 +72,7 @@ class EventDetailActivity : BaseActivity() {
         recycler.layoutManager = LinearLayoutManager(this)
         val txList = db.getTransactionsForEvent(eventId)
         recycler.adapter = TransactionAdapter(txList, listOf(event)) { tx ->
-            db.deleteTransaction(tx.id)
-            refresh()
+            DeleteHelper.confirmDeleteTransaction(this, db, tx) { refresh() }
         }
     }
 }

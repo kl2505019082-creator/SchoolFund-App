@@ -6,6 +6,74 @@
     android:padding="16dp"
     android:background="@color/bg_app">
 
+    <EditText
+        android:id="@+id/editSearchHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_search_history"
+        android:textColorHint="@color/text_muted"
+        android:inputType="text"
+        android:maxLines="1"
+        android:imeOptions="actionSearch"
+        android:background="@drawable/input_bg"
+        android:layout_marginBottom="10dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupFilter"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:background="@drawable/pill_status_bg"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="4dp"
+        android:layout_marginBottom="12dp">
+
+        <RadioButton
+            android:id="@+id/radioFilterAll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/filter_all"
+            android:gravity="center"
+            android:button="@null"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioFilterIncome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/filter_income"
+            android:gravity="center"
+            android:button="@null"
+            android:textStyle="bold"
+            android:textSize="13sp" />
+
+        <RadioButton
+            android:id="@+id/radioFilterExpense"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/filter_expense"
+            android:gravity="center"
+            android:button="@null"
+            android:textStyle="bold"
+            android:textSize="13sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textHistoryEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/msg_no_matching_transactions"
+        android:textColor="@color/text_muted"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerHistory"
         android:layout_width="match_parent"

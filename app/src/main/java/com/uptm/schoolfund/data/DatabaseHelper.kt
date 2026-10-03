@@ -93,6 +93,21 @@ class DatabaseHelper(context: Context) :
         writableDatabase.delete(TABLE_TRANSACTIONS, "$COL_TX_ID = ?", arrayOf(id.toString()))
     }
 
+    /** Re-inserts a previously deleted transaction under its original id (used by Undo). */
+    fun restoreTransaction(tx: TransactionItem) {
+        val values = ContentValues().apply {
+            put(COL_TX_ID, tx.id)
+            put(COL_TX_TYPE, tx.type)
+            put(COL_TX_AMOUNT, tx.amount)
+            put(COL_TX_DESCRIPTION, tx.description)
+            put(COL_TX_DATE, tx.date)
+            put(COL_TX_RECEIPT_PATH, tx.receiptPath)
+            if (tx.eventId != null) put(COL_TX_EVENT_ID, tx.eventId) else putNull(COL_TX_EVENT_ID)
+            if (tx.tabungId != null) put(COL_TX_TABUNG_ID, tx.tabungId) else putNull(COL_TX_TABUNG_ID)
+        }
+        writableDatabase.insertWithOnConflict(TABLE_TRANSACTIONS, null, values, SQLiteDatabase.CONFLICT_REPLACE)
+    }
+
     fun getAllTransactions(): List<TransactionItem> {
         val list = mutableListOf<TransactionItem>()
         val db = readableDatabase

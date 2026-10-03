@@ -106,6 +106,20 @@
     <!-- Switch fund sheet -->
     <string name="switch_fund_title">Switch Fund</string>
 
+    <!-- Transaction history search/filter -->
+    <string name="hint_search_history">Search description, event, date or amount</string>
+    <string name="filter_all">All</string>
+    <string name="filter_income">Income</string>
+    <string name="filter_expense">Expense</string>
+    <string name="msg_no_matching_transactions">No matching transactions</string>
+
+    <!-- Delete confirm / undo -->
+    <string name="dialog_delete_tx_title">Delete this transaction?</string>
+    <string name="dialog_delete_tx_msg">The balance will be updated. You can undo right after deleting.</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_undo">UNDO</string>
+    <string name="msg_tx_deleted">Transaction deleted</string>
+
     <!-- Backup & restore -->
     <string name="backup_title">Backup &amp; Restore Data</string>
     <string name="backup_subtitle">Save a copy of your data, or restore from a backup file</string>
