@@ -96,8 +96,8 @@
                     android:text="@string/btn_export_share"
                     android:textAllCaps="false"
                     android:textStyle="bold"
-                    android:textColor="@color/accent_blue"
-                    android:background="@drawable/btn_white_outline"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/btn_blue"
                     android:backgroundTint="@null"
                     android:elevation="2dp" />
 
