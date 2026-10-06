@@ -73,6 +73,11 @@ class DashboardActivity : BaseActivity() {
         findViewById<View>(R.id.buttonBackupData).setOnClickListener {
             startActivity(Intent(this, BackupActivity::class.java))
         }
+        findViewById<View>(R.id.buttonChangePin).setOnClickListener {
+            startActivity(
+                Intent(this, PinActivity::class.java).putExtra(PinActivity.EXTRA_MODE, PinActivity.MODE_CHANGE)
+            )
+        }
 
         setupLanguageToggle()
         setupThemeToggle()

@@ -141,4 +141,23 @@
     <string name="msg_invalid_backup_file">Fail ini tidak kelihatan seperti fail sandaran yang sah</string>
     <string name="backup_last_export">Sandaran terakhir: %1$s</string>
     <string name="backup_never">Belum ada sandaran dibuat pada telefon ini</string>
+
+    <!-- Kunci PIN -->
+    <string name="pin_title_unlock">Masukkan PIN</string>
+    <string name="pin_title_current">Masukkan PIN semasa</string>
+    <string name="pin_title_new">Cipta PIN 4 digit</string>
+    <string name="pin_title_confirm">Sahkan PIN anda</string>
+    <string name="pin_subtitle_new">PIN ini melindungi rekod dana anda pada telefon ini.</string>
+    <string name="pin_error_wrong">PIN salah</string>
+    <string name="pin_error_mismatch">PIN tidak sepadan. Cuba lagi.</string>
+    <string name="pin_locked">Terlalu banyak cubaan. Cuba lagi dalam %1$d s.</string>
+    <string name="pin_forgot">Lupa PIN?</string>
+    <string name="pin_saved">PIN disimpan</string>
+    <string name="pin_verify_device_title">Sahkan ini anda</string>
+    <string name="pin_verify_device_desc">Guna kunci skrin telefon untuk set semula PIN</string>
+    <string name="pin_no_device_lock_title">Set semula perlu padam data</string>
+    <string name="pin_no_device_lock_msg">Telefon ini tiada kunci skrin, jadi identiti anda tidak dapat disahkan. Anda boleh padam semua data dalam app ini dan mula semula (pulihkan fail sandaran selepas itu). Tindakan ini tidak boleh dibatalkan.</string>
+    <string name="btn_erase_data">Padam data</string>
+    <string name="tile_change_pin">Tukar PIN</string>
+    <string name="tile_change_pin_subtitle">Lindungi app dengan PIN 4 digit</string>
 </resources>

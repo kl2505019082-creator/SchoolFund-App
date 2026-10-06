@@ -141,4 +141,23 @@
     <string name="msg_invalid_backup_file">This doesn\'t look like a valid backup file</string>
     <string name="backup_last_export">Last backup: %1$s</string>
     <string name="backup_never">No backup made yet on this device</string>
+
+    <!-- PIN lock -->
+    <string name="pin_title_unlock">Enter PIN</string>
+    <string name="pin_title_current">Enter current PIN</string>
+    <string name="pin_title_new">Create a 4-digit PIN</string>
+    <string name="pin_title_confirm">Confirm your PIN</string>
+    <string name="pin_subtitle_new">This PIN protects your fund records on this phone.</string>
+    <string name="pin_error_wrong">Wrong PIN</string>
+    <string name="pin_error_mismatch">PINs do not match. Try again.</string>
+    <string name="pin_locked">Too many attempts. Try again in %1$d s.</string>
+    <string name="pin_forgot">Forgot PIN?</string>
+    <string name="pin_saved">PIN saved</string>
+    <string name="pin_verify_device_title">Verify it\'s you</string>
+    <string name="pin_verify_device_desc">Use your phone\'s screen lock to reset your PIN</string>
+    <string name="pin_no_device_lock_title">Reset needs erasing data</string>
+    <string name="pin_no_device_lock_msg">This phone has no screen lock, so your identity can\'t be verified. You can erase all data stored in this app and start over (restore a backup file afterwards). This cannot be undone.</string>
+    <string name="btn_erase_data">Erase data</string>
+    <string name="tile_change_pin">Change PIN</string>
+    <string name="tile_change_pin_subtitle">Protect this app with a 4-digit PIN</string>
 </resources>

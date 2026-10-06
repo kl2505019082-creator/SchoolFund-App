@@ -40,6 +40,7 @@
         <activity android:name=".ui.PdfPreviewActivity" android:exported="false" />
         <activity android:name=".ui.WorkPaperViewerActivity" android:exported="false" />
         <activity android:name=".ui.BackupActivity" android:exported="false" />
+        <activity android:name=".ui.PinActivity" android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

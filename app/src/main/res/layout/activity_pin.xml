@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/bg_app"
+    android:paddingHorizontal="32dp"
+    android:paddingTop="56dp"
+    android:paddingBottom="24dp">
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/card_white"
+        android:padding="6dp"
+        android:src="@drawable/ic_school_logo"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="SMK Perlis" />
+
+    <TextView
+        android:id="@+id/textPinTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textPinSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_muted"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginTop="6dp" />
+
+    <LinearLayout
+        android:id="@+id/layoutPinDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:id="@+id/textPinError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="20dp"
+        android:textColor="@color/danger_red"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginTop="14dp" />
+
+    <GridLayout
+        android:id="@+id/gridKeypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:id="@+id/textForgotPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_forgot"
+        android:textColor="@color/accent_blue"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:padding="12dp"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>

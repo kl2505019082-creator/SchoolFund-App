@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.uptm.schoolfund.R
+import com.uptm.schoolfund.util.PinHelper
 
 /**
  * Simple login screen. Since this is a single-teacher, single-device offline app,
@@ -46,13 +47,30 @@ class MainActivity : BaseActivity() {
         }
     }
 
+    /** Every entry into the app passes the PIN gate: unlock if a PIN exists, otherwise create one first. */
     private fun goToDashboard() {
-        startActivity(Intent(this, DashboardActivity::class.java))
-        finish()
+        val mode = if (PinHelper.hasPin(this)) PinActivity.MODE_UNLOCK else PinActivity.MODE_SETUP
+        @Suppress("DEPRECATION")
+        startActivityForResult(
+            Intent(this, PinActivity::class.java).putExtra(PinActivity.EXTRA_MODE, mode),
+            REQUEST_PIN
+        )
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_PIN) {
+            if (resultCode == RESULT_OK) {
+                startActivity(Intent(this, DashboardActivity::class.java))
+            }
+            finish()
+        }
     }
 
     companion object {
         const val PREFS_NAME = "school_fund_prefs"
         const val KEY_TEACHER_NAME = "teacher_name"
+        private const val REQUEST_PIN = 601
     }
 }
