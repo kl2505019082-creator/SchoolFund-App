@@ -44,20 +44,20 @@
     <string name="hint_reason_example">e.g. Additional budget needed for Sports Day prizes</string>
     <string name="label_link_event_optional">LINK TO EVENT (OPTIONAL)</string>
     <string name="not_linked_to_event">Not linked to a specific event</string>
-    <string name="label_work_paper_mandatory">WORK PAPER (PDF) — MANDATORY</string>
+    <string name="label_work_paper_mandatory">PAPERWORK (PDF) — MANDATORY</string>
     <string name="work_paper_requirement">Must include a title, objectives, and planned spending. Maximum size 500KB.</string>
-    <string name="btn_attach_work_paper">Attach work paper (PDF)</string>
+    <string name="btn_attach_work_paper">Attach paperwork (PDF)</string>
     <string name="btn_send_request">Send request to finance dept.</string>
-    <string name="pdf_chooser_title">Select work paper (PDF)</string>
+    <string name="pdf_chooser_title">Select paperwork (PDF)</string>
     <string name="msg_no_file_app">No file app available</string>
     <string name="msg_enter_valid_amount">Enter a valid amount</string>
     <string name="msg_explain_funds">Explain what the funds are for</string>
-    <string name="msg_attach_mandatory">Please attach the work paper (PDF) — mandatory</string>
+    <string name="msg_attach_mandatory">Please attach the paperwork (PDF) — mandatory</string>
     <string name="msg_pdf_too_large">PDF too large (maximum 500KB). Please reduce the file size.</string>
     <string name="msg_failed_read_pdf">Failed to read PDF: %1$s</string>
     <string name="msg_request_sent">Request sent to finance department</string>
     <string name="msg_request_failed">Failed to send request. Check internet connection.</string>
-    <string name="default_work_paper_name">work_paper.pdf</string>
+    <string name="default_work_paper_name">paperwork.pdf</string>
 
     <!-- Fund request list -->
     <string name="btn_new_fund_request">+  New fund request</string>
@@ -71,7 +71,7 @@
     <string name="status_pending">Pending</string>
     <string name="remarks_approved_by">Approved by %1$s: “%2$s”</string>
     <string name="remarks_rejected_by">Rejected by %1$s: “%2$s”</string>
-    <string name="btn_view_work_paper">📄  View Work Paper (PDF)</string>
+    <string name="btn_view_work_paper">📄  View Paperwork (PDF)</string>
     <string name="btn_approve">✓  Approve</string>
     <string name="btn_reject">✕  Reject</string>
     <string name="btn_disburse">💵  Mark Funds Disbursed</string>
@@ -86,15 +86,15 @@
     <string name="dialog_disburse_title">Mark funds as disbursed</string>
     <string name="dialog_disburse_msg">Confirm RM %1$s for %2$s has been paid?</string>
     <string name="btn_confirm">Confirm</string>
-    <string name="msg_failed_open_work_paper">Failed to open work paper: %1$s</string>
+    <string name="msg_failed_open_work_paper">Failed to open paperwork: %1$s</string>
 
     <!-- Work paper viewer -->
-    <string name="work_paper_title_default">Work Paper</string>
+    <string name="work_paper_title_default">Paperwork</string>
     <string name="btn_download">Download</string>
     <string name="btn_share">Share</string>
     <string name="msg_file_not_found">File not found</string>
     <string name="msg_cannot_display_pdf">Cannot display PDF: %1$s</string>
-    <string name="share_chooser_title">Share work paper</string>
+    <string name="share_chooser_title">Share paperwork</string>
     <string name="msg_saved_downloads">Saved to Downloads folder</string>
     <string name="msg_save_failed">Failed to save file</string>
     <string name="msg_saved_to_path">Saved to %1$s</string>
