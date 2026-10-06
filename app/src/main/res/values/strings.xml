@@ -108,6 +108,8 @@
 
     <!-- Transaction history search/filter -->
     <string name="hint_search_history">Search description, event, date or amount</string>
+    <string name="filter_show_label">Show (tick to choose)</string>
+    <string name="filter_class_fund">Class Fund</string>
     <string name="filter_all">All</string>
     <string name="filter_income">Income</string>
     <string name="filter_expense">Expense</string>

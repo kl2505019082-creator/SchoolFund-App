@@ -108,6 +108,8 @@
 
     <!-- Cari/tapis sejarah transaksi -->
     <string name="hint_search_history">Cari keterangan, acara, tarikh atau jumlah</string>
+    <string name="filter_show_label">Papar (tanda untuk pilih)</string>
+    <string name="filter_class_fund">Dana Kelas</string>
     <string name="filter_all">Semua</string>
     <string name="filter_income">Pendapatan</string>
     <string name="filter_expense">Perbelanjaan</string>
