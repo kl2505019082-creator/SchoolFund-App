@@ -36,14 +36,25 @@ class ReportActivity : BaseActivity() {
         findViewById<TextView>(R.id.textTotalExpense).text = "Total expense: ${formatter.format(totalExpense)}"
         findViewById<TextView>(R.id.textBalanceReport).text = "Class fund balance: ${formatter.format(balance)}"
 
+        // One summary card per event, styled like the class fund card above.
         val events = db.getAllEvents()
-        val sb = StringBuilder()
-        events.forEach { ev ->
-            val spent = db.getEventSpent(ev.id)
-            sb.append("${ev.name}: budget ${formatter.format(ev.budget)}, spent ${formatter.format(spent)}, remaining ${formatter.format(ev.budget - spent)}\n\n")
+        val cards = findViewById<LinearLayout>(R.id.layoutEventCards)
+        if (events.isEmpty()) {
+            val empty = findViewById<TextView>(R.id.textEventSummary)
+            empty.text = "No event budgets recorded."
+            empty.visibility = android.view.View.VISIBLE
         }
-        findViewById<TextView>(R.id.textEventSummary).text =
-            if (sb.isEmpty()) "No event budgets recorded." else sb.toString()
+        events.forEach { ev ->
+            val card = layoutInflater.inflate(R.layout.item_report_event, cards, false)
+            card.findViewById<TextView>(R.id.textReportEventName).text = ev.name
+            card.findViewById<TextView>(R.id.textReportEventIncome).text =
+                "Total income: ${formatter.format(db.getEventIncome(ev.id))}"
+            card.findViewById<TextView>(R.id.textReportEventExpense).text =
+                "Total expense: ${formatter.format(db.getEventSpent(ev.id))}"
+            card.findViewById<TextView>(R.id.textReportEventBalance).text =
+                "Balance: ${formatter.format(db.getEventBalance(ev.id))}"
+            cards.addView(card)
+        }
 
         findViewById<LinearLayout>(R.id.buttonGeneratePdf).setOnClickListener {
             startActivity(Intent(this, SelectEventsForReportActivity::class.java))
