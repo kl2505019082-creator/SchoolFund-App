@@ -6,6 +6,7 @@ import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -25,7 +26,9 @@ class FundRequestAdapter(
     private val viewerRole: String, // "teacher", "pengerusi" or "bendahari"
     private val onDecide: ((FundRequest, Boolean, String) -> Unit)?,
     private val onDisburse: ((FundRequest) -> Unit)?,
-    private val onClear: ((FundRequest) -> Unit)? = null
+    private val selectable: Boolean = false, // teacher list: tick requests to hide/unhide locally
+    private val selectedIds: Set<String> = emptySet(),
+    private val onSelectionChanged: ((FundRequest, Boolean) -> Unit)? = null
 ) : RecyclerView.Adapter<FundRequestAdapter.ViewHolder>() {
 
     private val formatter = NumberFormat.getCurrencyInstance(Locale("ms", "MY"))
@@ -38,7 +41,7 @@ class FundRequestAdapter(
         val meta: TextView = view.findViewById(R.id.textReqMeta)
         val status: TextView = view.findViewById(R.id.textReqStatus)
         val remarks: TextView = view.findViewById(R.id.textReqRemarks)
-        val clearBtn: TextView = view.findViewById(R.id.buttonClearRequest)
+        val selectBox: CheckBox = view.findViewById(R.id.checkReqSelect)
         val workPaperBtn: TextView = view.findViewById(R.id.buttonViewWorkPaper)
         val actions: LinearLayout = view.findViewById(R.id.layoutReqActions)
         val approveBtn: TextView = view.findViewById(R.id.buttonApprove)
@@ -88,13 +91,14 @@ class FundRequestAdapter(
         holder.workPaperBtn.visibility = if (req.workPaperBase64.isNotBlank()) View.VISIBLE else View.GONE
         holder.workPaperBtn.setOnClickListener { openWorkPaper(holder, req) }
 
-        // "Clear" only ever hides a request from THIS teacher's own list on THIS device —
-        // it never touches the shared Firestore record, so Pengerusi/Bendahari still see the
-        // full approval history. Only offered for already-decided requests (not "pending",
-        // which is still active and shouldn't be dismissible).
-        val canClear = viewerRole == "teacher" && req.status != "pending" && onClear != null
-        holder.clearBtn.visibility = if (canClear) View.VISIBLE else View.GONE
-        holder.clearBtn.setOnClickListener { onClear?.invoke(req) }
+        // Hiding only ever affects THIS teacher's own list on THIS device — it never touches the
+        // shared Firestore record, so Pengerusi/Bendahari still see the full approval history.
+        // Only offered for already-decided requests (a "pending" one is still active).
+        val canSelect = viewerRole == "teacher" && req.status != "pending" && selectable
+        holder.selectBox.setOnCheckedChangeListener(null)
+        holder.selectBox.visibility = if (canSelect) View.VISIBLE else View.GONE
+        holder.selectBox.isChecked = req.id in selectedIds
+        holder.selectBox.setOnCheckedChangeListener { _, checked -> onSelectionChanged?.invoke(req, checked) }
 
         val canDecide = viewerRole == "pengerusi" && req.status == "pending" && onDecide != null
         val canDisburse = viewerRole == "bendahari" && req.status == "approved" && onDisburse != null

@@ -64,7 +64,12 @@
     <string name="msg_no_requests_yet">No requests yet. Tap \"New fund request\" to start.</string>
 
     <!-- Fund request card -->
-    <string name="btn_clear_request">✕ Clear</string>
+    <string name="tab_requests_active">Active</string>
+    <string name="tab_requests_hidden">Hidden (%1$d)</string>
+    <string name="hint_hide_requests">Tick decided requests to hide them. Hiding only affects this phone — the finance team still sees every request.</string>
+    <string name="btn_hide_selected">Hide selected (%1$d)</string>
+    <string name="btn_unhide_selected">Show selected again (%1$d)</string>
+    <string name="msg_no_hidden_requests">No hidden requests.</string>
     <string name="status_approved">Approved</string>
     <string name="status_rejected">Rejected</string>
     <string name="status_disbursed">Disbursed</string>

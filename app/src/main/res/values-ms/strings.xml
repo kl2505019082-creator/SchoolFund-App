@@ -64,7 +64,12 @@
     <string name="msg_no_requests_yet">Tiada permohonan lagi. Tekan \"Permohonan dana baharu\" untuk mula.</string>
 
     <!-- Kad permohonan dana -->
-    <string name="btn_clear_request">✕ Buang</string>
+    <string name="tab_requests_active">Aktif</string>
+    <string name="tab_requests_hidden">Disorok (%1$d)</string>
+    <string name="hint_hide_requests">Tanda permohonan yang sudah diputuskan untuk disorok. Sorok hanya pada telefon ini — pihak kewangan masih nampak semua permohonan.</string>
+    <string name="btn_hide_selected">Sorok yang dipilih (%1$d)</string>
+    <string name="btn_unhide_selected">Papar semula yang dipilih (%1$d)</string>
+    <string name="msg_no_hidden_requests">Tiada permohonan disorok.</string>
     <string name="status_approved">Diluluskan</string>
     <string name="status_rejected">Ditolak</string>
     <string name="status_disbursed">Duit Dikeluarkan</string>

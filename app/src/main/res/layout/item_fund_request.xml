@@ -62,14 +62,11 @@
             android:textStyle="bold"
             android:background="@drawable/pill_status_bg" />
 
-        <TextView
-            android:id="@+id/buttonClearRequest"
+        <CheckBox
+            android:id="@+id/checkReqSelect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_clear_request"
-            android:textColor="@color/text_muted"
-            android:textSize="11sp"
-            android:padding="4dp"
+            android:layout_marginStart="8dp"
             android:visibility="gone" />
     </LinearLayout>
 
