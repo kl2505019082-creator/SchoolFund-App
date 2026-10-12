@@ -20,4 +20,4 @@ Kotlin, Android Studio, SQLite (offline data), Firebase Auth and Firestore (Requ
 3. Run on Android 7.0 (API 24) or newer.
 
 ## Demo video
-[insert link]
+https://www.youtube.com/watch?v=V3LbD2893G0
